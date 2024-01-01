@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.rtdb = exports.fs = void 0;
 var admin = require("firebase-admin");
-var serviceAccount = require("../credentials/key.json");
 var databaseURL = process.env.DATABASE_URL || "https://apx-level-2-default-rtdb.firebaseio.com";
 if (process.env.NODE_ENV === "development") {
+    var serviceAccount = require("../credentials/key.json");
     admin.initializeApp({
         credential: admin.credential.cert(serviceAccount),
         databaseURL: databaseURL,

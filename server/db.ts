@@ -1,10 +1,10 @@
 import * as admin from "firebase-admin";
-import * as serviceAccount from "../credentials/key.json";
 
 const databaseURL =
   process.env.DATABASE_URL || "https://apx-level-2-default-rtdb.firebaseio.com";
 
 if (process.env.NODE_ENV === "development") {
+  const serviceAccount = require("../credentials/key.json");
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount as any),
     databaseURL,
